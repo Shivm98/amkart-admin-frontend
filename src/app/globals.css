@@ -3,9 +3,42 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: #1a202c; /* Dark Gray */
+  --secondary-color: #2d3748; /* Darker Gray */
+  --accent-color: #3182ce; /* Blue */
+  --background-color: #f7fafc; /* Light Gray */
+  --text-color: #2d3748; /* Text Gray */
+  --font-family: "Poppins", sans-serif;
+  --border-radius: 8px;
+}
+
+/* Default (light mode) */
+:root {
+  --background-color: #f7fafc;
+  --text-color: #2d3748;
+  --primary-color: #1a202c;
+  --secondary-color: #2d3748;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a202c;
+    --text-color: #f7fafc;
+    --primary-color: #f7fafc;
+    --secondary-color: #2d3748;
+  }
+}
+
+body.dark-mode {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,18 +49,11 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+*::-webkit-scrollbar {
+  display: none;
 }
