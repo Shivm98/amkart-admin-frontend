@@ -16,6 +16,7 @@ import {
   FiChevronUp,
   FiTool,
   FiStar,
+  FiUser,
 } from "react-icons/fi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -34,6 +35,7 @@ export default function Sidebar() {
 
   const menuItems = [
     { name: "Dashboard", icon: <FiHome />, href: "/" },
+    { name: "Profile", icon: <FiUser />, href: "/profile" },
     { name: "Orders", icon: <FiShoppingCart />, href: "/orders" },
     {
       name: "Inventory Management",
