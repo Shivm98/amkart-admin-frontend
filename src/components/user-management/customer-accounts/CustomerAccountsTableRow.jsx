@@ -1,5 +1,6 @@
 "use client";
 import { FiEdit, FiTrash, FiEye } from "react-icons/fi";
+import Link from "next/link";
 
 export default function CustomerAccountsTableRow({
   customer,
@@ -35,12 +36,13 @@ export default function CustomerAccountsTableRow({
       </td>
       <td className="px-4 py-2 text-sm text-gray-800 border-b">
         <div className="flex space-x-2">
-          <button
+          <Link
             className="p-2 hover:bg-gray-200 rounded-full"
             title="View Details"
+            href={`/user-management/customer-details/${customer.id}`}
           >
             <FiEye />
-          </button>
+          </Link>
           <button className="p-2 hover:bg-gray-200 rounded-full" title="Edit">
             <FiEdit />
           </button>
